@@ -21,6 +21,13 @@ This project is a fork of [marek/fslack](https://github.com/marek/fslack), used 
 * `Python`: The app is written in Python
 * `python-requests`: web request library for Python
 
+
+### Accessing Your Slack Workspace
+In order to get your token, you will have to create a new Slack App. You can follow [this tutorial](https://api.slack.com/tutorials/tracks/getting-a-token).
+Once you have the app, you have to install it in your workspace. Once it is installed, invite the App's bot into the channels from which you want to download the files.
+To invite the bot, use `\invite @your-app-name` as discussed in [this question](https://stackoverflow.com/a/61369364/8691571)
+
+
 ### Installation Instructions
 
 1. Download the Python program:
@@ -51,6 +58,7 @@ This project is a fork of [marek/fslack](https://github.com/marek/fslack), used 
 
  * [kylevedder](https://github.com/kylevedder) for multiple fixes
  * [nalt](https://github.com/nalt) for the fix on file downloads
+ * [paloha](https://github.com/paloha) for resolving API incompatibilities and other fixes
 
 ### Contacts ###
 
