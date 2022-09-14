@@ -13,6 +13,7 @@
 import os
 import sys
 import time
+import traceback
 import requests
 from pprint import pprint  # for debugging purposes
 
@@ -207,7 +208,11 @@ if __name__ == '__main__':
                 elif len(f['groups']) > 0:
                     channel = get_group_name(f['groups'][0])
                 else:
-                    print("No channel/group for file", f['id'])
+                    print("No channel/group for file", f["id"])
+                    continue
+                # note google docs links have 'url_private' not 'url_private_download'
+                if not f.get("url_private_download"):
+                    print("Skipping google docs link:", channel, date, filename, user)
                     continue
                 file_url = f["url_private_download"]
                 basedir = OUTPUTDIR + '/' + channel
@@ -219,7 +224,7 @@ if __name__ == '__main__':
                     ts = date
             except Exception as e:
                 if DEBUG:
-                    print(str(e))
+                    traceback.print_exc()
                 else:
                     print("Problem during download of file", f['id'])
                 pass
