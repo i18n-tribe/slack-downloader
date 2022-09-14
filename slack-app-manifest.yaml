@@ -1,0 +1,41 @@
+display_information:
+  name: Slack Data Downloader
+features:
+  bot_user:
+    display_name: Slack Data Downloader
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - app_mentions:read
+      - bookmarks:read
+      - calls:read
+      - channels:history
+      - channels:read
+      - conversations.connect:read
+      - files:read
+      - groups:history
+      - groups:read
+      - im:history
+      - im:read
+      - links:read
+      - metadata.message:read
+      - mpim:history
+      - mpim:read
+      - pins:read
+      - reactions:read
+      - remote_files:read
+      - team:read
+      - users:read.email
+      - users:read
+      - users.profile:read
+      - dnd:read
+      - emoji:read
+      - reminders:read
+      - team.billing:read
+      - team.preferences:read
+      - usergroups:read
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

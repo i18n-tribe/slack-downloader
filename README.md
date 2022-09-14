@@ -22,10 +22,30 @@ This project is a fork of [marek/fslack](https://github.com/marek/fslack), used 
 * `python-requests`: web request library for Python
 
 
-### Accessing Your Slack Workspace
+### Setting up API Access to your Slack Workspace
+
 In order to get your token, you will have to create a new Slack App. You can follow [this tutorial](https://api.slack.com/tutorials/tracks/getting-a-token).
-Once you have the app, you have to install it in your workspace. Once it is installed, invite the App's bot into the channels from which you want to download the files.
-To invite the bot, use `\invite @your-app-name` as discussed in [this question](https://stackoverflow.com/a/61369364/8691571)
+
+You can create a new app by going to https://api.slack.com/apps and clicking on the `"Create New App"` button.
+
+When you click on the `"Create New App"` button, you will be given the following 2 options:
+
+1. Create an app from scratch
+2. Create an app from an app manifest
+
+Select "Create an app from an app manifest" and then copy and paste the text in [slack-app-manifest.yaml](slack-app-manifest.yaml)
+
+This will create an app with permission to read all data in your Slack workspace. It won't have any write permissions.
+
+Once you have created the app, you have to install it in your workspace. 
+
+Now - to get the token, go to the `OAuth & Permissions` section in the app settings. Then in the `OAuth Tokens for Your Workspace` section, copy the `Bot User OAuth Token`.
+
+To access app `OAuth & Permissions` settings, you can navigate directly to `https://api.slack.com/apps/<app_id>/oauth?`
+
+Finally, invite the App's bot into the channels from which you want to download the files.
+
+To invite the bot, use `/invite @your-app-name` e.g. `/invite @Slack Data Downloader` as discussed in [this question](https://stackoverflow.com/a/61369364/8691571)
 
 
 ### Installation Instructions
